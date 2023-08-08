@@ -1,4 +1,4 @@
-# opt-vec
+# opt_vec
 
 A contiguous growable array type with heap-allocated contents
 with fast deletion process.
