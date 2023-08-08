@@ -1,9 +1,15 @@
 [package]
 name = "opt_vec"
+description = "A wrapper around Vec<Option<T> that makes deletion fast"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+rust-version = "1.56"
+readme = "README.md"
+authors = ["whtsht <whiteshirt0079@gmail.com>"]
+documentation = "https://docs.rs/quote/"
+repository = "https://github.com/whtsht/opt_vec"
+license = "MIT"
+keywords = ["no_std"]
 
 [features]
 alloc = []
