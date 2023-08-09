@@ -13,7 +13,7 @@
 //! Cargo.toml
 //! ```text
 //! [dependencies]
-//! opt-vec = "*"
+//! opt_vec = "*"
 //! ```
 //!
 //! and then
@@ -32,7 +32,7 @@
 //! Cargo.toml
 //!
 //! ```text
-//! [dependencies.opt-vec]
+//! [dependencies.opt_vec]
 //! version = "*"
 //! default-features = false
 //! features = ["alloc"]
@@ -42,21 +42,12 @@
 #[cfg(feature = "alloc")]
 extern crate alloc;
 
-#[cfg(feature = "std")]
-mod lib {
-    pub use std::convert::identity;
-    pub use std::ops::{Index, IndexMut};
-    pub use std::slice::{Iter, IterMut};
-}
+#[cfg(feature = "alloc")]
+use alloc::vec::Vec;
 
-#[cfg(not(feature = "std"))]
-mod lib {
-    use core::convert::identity;
-    use core::ops::{Index, IndexMut};
-    use core::slice::{Iter, IterMut};
-}
-
-use lib::*;
+use core::convert::identity;
+use core::ops::{Index, IndexMut};
+use core::slice::{Iter, IterMut};
 
 /// A contiguous growable array type with heap-allocated contents
 /// with fast deletion process.
