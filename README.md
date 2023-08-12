@@ -30,7 +30,6 @@ use opt_vec::OptVec;
 
 let mut v = OptVec::new();
 v.push(1);
-
 ```
 
 ## Support `no_std`
